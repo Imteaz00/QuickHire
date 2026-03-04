@@ -31,7 +31,7 @@ app.get("/health", (req: Request, res: Response) => {
 });
 
 app.use("/api/jobs", jobsRouter);
-// app.use("/api/applications", applicationsRouters);s
+// app.use("/api/applications", applicationsRouters);
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   return res.status(err.status || 500).json({ message: err.message || "Internal server error" });
 });

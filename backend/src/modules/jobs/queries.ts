@@ -3,7 +3,7 @@ import { db } from "../../config/db.js";
 import type { NewJob } from "../../types.js";
 import { jobs } from "./schema.js";
 
-export const createJob = async (data: NewJob) => {
+export const createJob = async (data: NewJob): Promise<typeof jobs.$inferInsert> => {
   const [job] = await db.insert(jobs).values(data).returning();
   return job;
 };
@@ -21,5 +21,6 @@ export const getJobById = async (id: string) => {
 };
 
 export const deleteJob = async (id: string) => {
-  await db.delete(jobs).where(eq(jobs.id, id));
+  const [deletedJob] = await db.delete(jobs).where(eq(jobs.id, id)).returning();
+  return deletedJob;
 };

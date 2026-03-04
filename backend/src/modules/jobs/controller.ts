@@ -27,8 +27,14 @@ export const getJobById = async (req: Request, res: Response) => {
 
 export const createJob = async (req: Request, res: Response) => {
   const { title, company, location, description } = req.body;
-  if (!title || !company || !location || !description) {
-    return res.status(400).json({ error: "All fields are required" });
+  if (
+    typeof title !== "string" || !title.trim() ||
+    typeof company !== "string" || !company.trim() ||
+    typeof location !== "string" || !location.trim() ||
+    typeof description !== "string" || !description.trim()
+  ) {
+    return res.status(400).json({ error: "All fields are required and must be non-empty strings" });
+   }
   }
   try {
     const newJob = await jobQueries.createJob({ title, company, location, description });
@@ -42,7 +48,10 @@ export const createJob = async (req: Request, res: Response) => {
 export const deleteJob = async (req: Request, res: Response) => {
   try {
     const { id } = req.params as { id: string };
-    await jobQueries.deleteJob(id);
+    const deleted = await jobQueries.deleteJob(id);
+    if (!deleted) {
+      return res.status(404).json({ error: "Job not found" });
+    }
     res.status(200).json({ message: "Job deleted successfully" });
   } catch (error) {
     console.error("Error deleting job:", error);
