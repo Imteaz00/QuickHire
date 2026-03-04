@@ -28,13 +28,16 @@ export const getJobById = async (req: Request, res: Response) => {
 export const createJob = async (req: Request, res: Response) => {
   const { title, company, location, description } = req.body;
   if (
-    typeof title !== "string" || !title.trim() ||
-    typeof company !== "string" || !company.trim() ||
-    typeof location !== "string" || !location.trim() ||
-    typeof description !== "string" || !description.trim()
+    typeof title !== "string" ||
+    !title.trim() ||
+    typeof company !== "string" ||
+    !company.trim() ||
+    typeof location !== "string" ||
+    !location.trim() ||
+    typeof description !== "string" ||
+    !description.trim()
   ) {
     return res.status(400).json({ error: "All fields are required and must be non-empty strings" });
-   }
   }
   try {
     const newJob = await jobQueries.createJob({ title, company, location, description });
