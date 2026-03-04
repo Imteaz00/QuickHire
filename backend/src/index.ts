@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import { ENV } from "./config/env.js";
 import cors from "cors";
+import jobsRouter from "./modules/jobs/routes.js";
 
 const app = express();
 
@@ -29,7 +30,7 @@ app.get("/health", (req: Request, res: Response) => {
   });
 });
 
-// app.use("/api/jobs", jobsRouters);
+app.use("/api/jobs", jobsRouter);
 // app.use("/api/applications", applicationsRouters);
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   return res.status(err.status || 500).json({ message: err.message || "Internal server error" });
