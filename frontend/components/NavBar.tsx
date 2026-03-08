@@ -1,26 +1,33 @@
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
     <nav className="w-full py-6 inline-flex justify-between items-center">
       <div className="self-stretch flex justify-center items-center gap-12">
-        <div className="flex gap-4">
-          <Image src="images/Frame 3.svg" alt="QuickHire Logo" width={32} height={32} />
+        <Link href="/" className="flex gap-4">
+          <Image src="/images/Frame 3.svg" alt="QuickHire Logo" width={32} height={32} />
           <div className="justify-start text-neutral-100 text-2xl font-extrabold font-mono leading-9">
             QuickHire
           </div>
-        </div>
+        </Link>
         <div className="hidden self-stretch lg:flex justify-center items-center gap-4">
           <div className="inline-flex flex-col justify-start items-start gap-6">
-            <div className="justify-start text-neutral-80 text-base font-medium leading-6">
+            <Link
+              href="/jobs"
+              className="justify-start text-neutral-80 text-base font-medium leading-6 hover:text-primary transition-colors duration-300"
+            >
               Find Jobs
-            </div>
+            </Link>
           </div>
           <div className="inline-flex flex-col justify-start items-start gap-6">
-            <div className="justify-start text-neutral-80 text-base font-medium leading-6">
+            <Link
+              href="/"
+              className="justify-start text-neutral-80 text-base font-medium leading-6 hover:text-primary transition-colors duration-300"
+            >
               Browse Companies
-            </div>
+            </Link>
           </div>
         </div>
       </div>

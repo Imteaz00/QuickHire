@@ -4,3 +4,4 @@ dist
 seed.ts
 .vscode
 checklist.txt
+seeder.ts

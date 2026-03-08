@@ -24,3 +24,13 @@ export const createApplication = async (req: Request, res: Response) => {
     res.status(500).json({ error: "Failed to create application" });
   }
 };
+
+export const getAllApplications = async (req: Request, res: Response) => {
+  try {
+    const allApplications = await applicationQueries.getAllApplications();
+    return res.status(200).json(allApplications);
+  } catch (error) {
+    console.error("Error fetching applications:", error);
+    return res.status(500).json({ error: "Failed to fetch applications" });
+  }
+};

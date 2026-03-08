@@ -3,7 +3,14 @@ import * as jobQueries from "./queries.js";
 
 export const getAllJobs = async (req: Request, res: Response) => {
   try {
-    const jobs = await jobQueries.getAllJobs();
+    const { category, sort, search, location } = req.query as {
+      category?: string;
+      sort?: string;
+      search?: string;
+      location?: string;
+    };
+
+    const jobs = await jobQueries.getAllJobs({ category, sort, search, location });
     res.status(200).json(jobs);
   } catch (error) {
     console.error("Error fetching jobs:", error);
@@ -26,7 +33,7 @@ export const getJobById = async (req: Request, res: Response) => {
 };
 
 export const createJob = async (req: Request, res: Response) => {
-  const { title, company, location, description } = req.body;
+  const { title, company, location, description, category } = req.body;
   if (
     typeof title !== "string" ||
     !title.trim() ||
@@ -40,7 +47,7 @@ export const createJob = async (req: Request, res: Response) => {
     return res.status(400).json({ error: "All fields are required and must be non-empty strings" });
   }
   try {
-    const newJob = await jobQueries.createJob({ title, company, location, description });
+    const newJob = await jobQueries.createJob({ title, company, location, description, category });
     res.status(201).json(newJob);
   } catch (error) {
     console.error("Error creating job:", error);
@@ -59,5 +66,25 @@ export const deleteJob = async (req: Request, res: Response) => {
   } catch (error) {
     console.error("Error deleting job:", error);
     res.status(500).json({ error: "Failed to delete job" });
+  }
+};
+
+export const getCategoryCounts = async (req: Request, res: Response) => {
+  try {
+    const categoryCounts = await jobQueries.getCategoryCounts();
+    res.status(200).json(categoryCounts);
+  } catch (error) {
+    console.error("Error fetching category counts:", error);
+    res.status(500).json({ error: "Failed to fetch category counts" });
+  }
+};
+
+export const getAllLocations = async (req: Request, res: Response) => {
+  try {
+    const locations = await jobQueries.getAllLocations();
+    res.status(200).json(locations);
+  } catch (error) {
+    console.error("Error fetching locations:", error);
+    res.status(500).json({ error: "Failed to fetch locations" });
   }
 };

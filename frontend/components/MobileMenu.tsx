@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function MobileMenu() {
@@ -22,12 +23,12 @@ export default function MobileMenu() {
       {mobileMenuOpen && (
         <div className="lg:hidden fixed top-20 left-0 right-0 bg-white border-b border-slate-200 z-50">
           <div className="flex flex-col gap-4 p-4">
-            <a href="#" className="text-neutral-80 text-base font-medium">
+            <Link href="/jobs" className="text-neutral-80 text-base font-medium">
               Find Jobs
-            </a>
-            <a href="#" className="text-neutral-80 text-base font-medium">
+            </Link>
+            <Link href="/" className="text-neutral-80 text-base font-medium">
               Browse Companies
-            </a>
+            </Link>
             <div className="border-t border-slate-200 pt-4 flex flex-col gap-3">
               <button className="w-full px-4 py-2 text-primary text-base font-bold border border-primary">
                 Login
