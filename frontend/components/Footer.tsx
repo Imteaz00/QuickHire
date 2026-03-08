@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-foreground outline-1 outline-offset--1 font-sans mx-auto px-6 py-16 md:px-16 xl:px-32">
+    <footer className="w-full bg-foreground outline-1 outline-offset-1 font-sans mx-auto px-6 py-16 md:px-16 xl:px-32">
       <div className="grid grid-cols-4 gap-12 lg:grid-cols-12 lg:flex lg:justify-between">
         <div className="col-span-4">
           <div className="mb-8 flex items-center gap-3">
@@ -26,9 +26,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="col-span-2">
-          <h3 className="mb-6 text-white text-lg font-semibold font-['Epilogue'] leading-7">
-            Resources
-          </h3>
+          <h3 className="mb-6 text-white text-lg font-semibold leading-7">Resources</h3>
           <ul className="space-y-4 text-neutral-20">
             <li className="text-base font-normal leading-6">Help Docs</li>
             <li className="text-base font-normal leading-6">Guide</li>
@@ -69,7 +67,7 @@ export default function Footer() {
       <div className="mt-16 border-t border-white/10 pt-10">
         <div className="flex flex-col gap-6 items-center sm:flex-row sm:items-center sm:justify-between">
           <div className="text-white opacity-50 text-base font-medium leading-6">
-            {new Date().getFullYear()} @ QuickHire. All rights reserved.
+            © {new Date().getFullYear()} QuickHire. All rights reserved.{" "}
           </div>
           <div className="flex items-center gap-4">
             <button

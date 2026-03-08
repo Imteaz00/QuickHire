@@ -7,13 +7,13 @@ import LatestJobOpen from "@/components/LatestJobOpen";
 
 export default function Home() {
   return (
-    <div>
+    <main>
       <Header />
       <Company />
       <Category />
       <CTA />
       <FeaturedJobs />
       <LatestJobOpen />
-    </div>
+    </main>
   );
 }

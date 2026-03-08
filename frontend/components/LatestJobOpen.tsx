@@ -57,7 +57,7 @@ export default function LatestJobOpen() {
     <section className="relative w-full overflow-hidden bg-neutral-10">
       <Image
         src="/images/Pattern2.svg"
-        alt="Background Image"
+        alt=""
         width={877}
         height={1440}
         className="absolute -right-32 top-0 hidden h-auto max-w-none opacity-80 lg:block"

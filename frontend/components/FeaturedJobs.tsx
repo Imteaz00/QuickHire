@@ -180,8 +180,8 @@ export default function FeaturedJobs() {
       <div className="md:hidden">
         <Carousel className="w-screen">
           <CarouselContent>
-            {jobs.map((job, index) => (
-              <CarouselItem key={index}>
+            {jobs.map((job) => (
+              <CarouselItem key={job.id}>
                 <div
                   className="flex-1 p-6 h-72 bg-white outline-1 outline-offset-1 outline-neutral-20 inline-flex flex-col justify-start items-start gap-4"
                   key={job.id}

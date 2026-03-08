@@ -7,7 +7,7 @@ export default function Header() {
     <div className="w-full min-h-199 relative bg-neutral-10 overflow-hidden">
       <Image
         src="/images/Pattern.svg"
-        alt="Background Image"
+        alt=""
         height={794}
         width={860}
         className="absolute right-10 top-15 max-w-none scale-115"
@@ -48,6 +48,9 @@ export default function Header() {
                 <Search className="text-neutral-100" />
                 <div className="flex-1 self-stretch pt-5 inline-flex flex-col justify-between items-start">
                   <input
+                    type="text"
+                    name="jobTitle"
+                    aria-label="Job title or keyword"
                     className="opacity-50 justify-start placeholder:text-neutral-60 text-base font-normal leading-6"
                     placeholder="Job title or keyword"
                   />

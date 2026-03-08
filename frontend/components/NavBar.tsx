@@ -3,7 +3,7 @@ import MobileMenu from "./MobileMenu";
 
 export default function NavBar() {
   return (
-    <div className="w-full py-6 inline-flex justify-between items-center">
+    <nav className="w-full py-6 inline-flex justify-between items-center">
       <div className="self-stretch flex justify-center items-center gap-12">
         <div className="flex gap-4">
           <Image src="images/Frame 3.svg" alt="QuickHire Logo" width={32} height={32} />
@@ -40,6 +40,6 @@ export default function NavBar() {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

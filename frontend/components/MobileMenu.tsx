@@ -10,6 +10,8 @@ export default function MobileMenu() {
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         className="p-2 text-neutral-100 hover:bg-slate-100 rounded"
+        aria-expanded={mobileMenuOpen}
+        aria-label="Toggle navigation menu"
       >
         {mobileMenuOpen ? (
           <X className="text-neutral-100" />
