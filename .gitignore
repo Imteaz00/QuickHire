@@ -2,3 +2,5 @@ node_modules
 .env
 dist
 seed.ts
+.vscode
+checklist.txt
