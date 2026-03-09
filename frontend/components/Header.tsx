@@ -32,7 +32,7 @@ export default function Header() {
               Discover more than <span className="text-accent-blue">5000+ Jobs</span>
             </div>
             <Image
-              src="/images/vector.svg"
+              src="/images/Vector.svg"
               alt="Vector"
               height={32}
               width={455}
