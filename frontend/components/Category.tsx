@@ -105,12 +105,12 @@ export default async function Category() {
           </Link>
         ))}
       </div>
-      <div className="pt-4 pb-10 md:hidden inline-flex gap-4">
-        <Link href="/jobs" className="text-center text-primary text-base font-semibold leading-6">
+      <Link href="/jobs" className="pt-4 pb-10 md:hidden inline-flex gap-4">
+        <div className="text-center text-primary text-base font-semibold leading-6">
           Show all jobs
-        </Link>
+        </div>
         <ArrowRight className="text-primary" />
-      </div>
+      </Link>
     </div>
   );
 }

@@ -1,8 +1,10 @@
 "use server";
 
+import { BACKEND_URL } from "@/server";
+
 export default async function fetchLocations() {
   try {
-    const res = await fetch(`${process.env.BACKEND_URL}/api/jobs/locations`);
+    const res = await fetch(`${BACKEND_URL}/api/jobs/locations`);
     if (!res.ok) {
       throw new Error(`Failed to fetch locations: ${res.statusText}`);
     }

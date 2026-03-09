@@ -2,6 +2,7 @@ import fetchJobById from "@/actions/fetchJobById";
 import QuickApply from "@/components/QuickApply";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -20,6 +21,10 @@ export async function generateMetadata({
 export default async function JobDetailsPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const job = await fetchJobById(String(id));
+
+  if (!job) {
+    notFound();
+  }
 
   return (
     <section className="relative mt-6 overflow-hidden rounded-2xl border border-neutral-20 bg-linear-to-br from-neutral-10 via-white to-primary-light/40 p-4 md:p-8">
@@ -40,14 +45,14 @@ export default async function JobDetailsPage({ params }: { params: Promise<{ id:
             <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
               Full Time
             </span>
-            {job.category.map((category) => (
+            {job.category?.map((category) => (
               <span
                 key={category}
                 className="rounded-full bg-neutral-10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-neutral-80"
               >
                 {category}
               </span>
-            ))}
+            ))}{" "}
             <span className="rounded-full bg-accent-yellow/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-neutral-100">
               2 days ago
             </span>

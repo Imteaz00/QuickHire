@@ -10,12 +10,10 @@ export const createJob = async (data: NewJob): Promise<typeof jobs.$inferInsert>
 
 export const getAllJobs = async ({
   category,
-  sort,
   search,
   location,
 }: {
   category?: string;
-  sort?: string;
   search?: string;
   location?: string;
 }) => {

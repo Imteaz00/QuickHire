@@ -52,7 +52,7 @@ export default async function LatestJobOpen() {
 
                 <div className="inline-flex items-center gap-2 text-base leading-6 text-neutral-80 group-hover:text-white">
                   <div className="line-clamp-1">{job.company}</div>
-                  <div className="size-1 rounded-full bg-neutral-80" />
+                  <div className="size-1 rounded-full bg-neutral-80 group-hover:bg-white" />{" "}
                   <div className="line-clamp-1">{job.location}</div>
                 </div>
 
@@ -61,8 +61,9 @@ export default async function LatestJobOpen() {
                     Full-Time
                   </div>
                   <div className="h-6 w-px bg-neutral-20" />
-
-                  {job.category.map((cat) => categories[cat])}
+                  {job.category.map((cat) => (
+                    <span key={cat}>{categories[cat]}</span>
+                  ))}{" "}
                 </div>
               </div>
             </Link>

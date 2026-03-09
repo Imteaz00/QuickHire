@@ -46,16 +46,20 @@ export default function AdminJobForm() {
       category: Array.isArray(data.category) ? data.category : [data.category],
     };
 
-    const result = await createJob({ data: payload });
+    try {
+      const result = await createJob({ data: payload });
 
-    if (result?.error) {
-      setSubmitMessage(result.error);
-    } else {
-      setSubmitMessage("Job post created successfully!");
-      reset();
+      if (result?.error) {
+        setSubmitMessage(result.error);
+      } else {
+        setSubmitMessage("Job post created successfully!");
+        reset();
+      }
+    } catch (error) {
+      setSubmitMessage("An unexpected error occurred. Please try again.");
+    } finally {
+      setSubmitting(false);
     }
-
-    setSubmitting(false);
   };
 
   return (

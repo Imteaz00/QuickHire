@@ -43,14 +43,18 @@ export default async function allApplications() {
                   </td>
                   <td className="py-3 pr-4 max-w-100">{application.coverNote}</td>
                   <td className="py-3 pr-4">
-                    <a
-                      href={application.resumeLink}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-primary underline"
-                    >
-                      Open Resume
-                    </a>
+                    {application.resumeLink && /^https?:\/\//i.test(application.resumeLink) ? (
+                      <a
+                        href={application.resumeLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-primary underline"
+                      >
+                        Open Resume
+                      </a>
+                    ) : (
+                      <span className="text-neutral-60">Invalid link</span>
+                    )}{" "}
                   </td>
                   <td className="py-3 pr-4">
                     {new Date(application.createdAt).toLocaleDateString()}

@@ -11,13 +11,13 @@ export default async function AdminPage() {
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <Link
-            href="admin/allposts"
+            href="/admin/allposts"
             className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white"
           >
             View all posts
           </Link>
           <Link
-            href="admin/allApplications"
+            href="/admin/allApplications"
             className="rounded-md border border-neutral-30 px-4 py-2 text-sm font-semibold text-neutral-90"
           >
             View all applications

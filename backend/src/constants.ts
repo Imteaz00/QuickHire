@@ -7,6 +7,6 @@ const CATEGORY = {
   ENGINEERING: "engineering",
   BUSINESS: "business",
   HR: "human resources",
-};
+} as const;
 
-export default CATEGORY;
+export { CATEGORY };

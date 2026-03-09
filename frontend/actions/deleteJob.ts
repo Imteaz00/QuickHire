@@ -6,11 +6,10 @@ import { BACKEND_URL } from "@/server";
 export default async function deleteJob(input: FormData | string) {
   const jobId = typeof input === "string" ? input : String(input.get("jobId") || "").trim();
 
+  if (!jobId) {
+    throw new Error("Job id is required");
+  }
   try {
-    if (!jobId) {
-      throw new Error("Job id is required");
-    }
-
     const res = await fetch(`${BACKEND_URL}/api/jobs/${jobId}`, {
       method: "DELETE",
     });

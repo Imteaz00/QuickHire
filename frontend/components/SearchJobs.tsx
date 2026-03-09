@@ -2,8 +2,13 @@ import fetchLocations from "@/actions/fetchLocations";
 import { MapPin, Search } from "lucide-react";
 
 export default async function SearchJobs() {
-  const locations = await fetchLocations();
-
+  let locations: string[] = [];
+  try {
+    locations = await fetchLocations();
+  } catch (error) {
+    console.error("Failed to fetch locations:", error);
+    // Fallback to empty array - form still usable with "All locations"
+  }
   return (
     <form
       action="/jobs"

@@ -65,9 +65,9 @@ export default async function FeaturedJobs() {
               {job.description}
             </div>
             <div className="inline-flex justify-start items-start gap-2">
-              {job.category.map((category) => (
-                <div key={category}>{categories[category]}</div>
-              ))}
+              {job.category?.map((category) => (
+                <div key={category}>{categories[category] ?? null}</div>
+              ))}{" "}
             </div>
           </Link>
         ))}
