@@ -6,10 +6,10 @@ import Link from "next/link";
 export default async function Jobs({
   searchParams,
 }: {
-  searchParams: Promise<{ category?: string; sort?: string; search?: string }>;
+  searchParams: Promise<{ category?: string; sort?: string; search?: string; location?: string }>;
 }) {
-  const { category, sort, search } = await searchParams;
-  const jobs = await fetchAllJobs({ category, sort, search });
+  const { category, sort, search, location } = await searchParams;
+  const jobs = await fetchAllJobs({ category, sort, search, location });
   return (
     <div className="mt-6 w-full flex flex-col justify-start items-start gap-6">
       {jobs.map((job) => (
