@@ -10,7 +10,7 @@ export const getAllJobs = async (req: Request, res: Response) => {
       location?: string;
     };
 
-    const jobs = await jobQueries.getAllJobs({ category, sort, search, location });
+    const jobs = await jobQueries.getAllJobs({ category, search, location });
     res.status(200).json(jobs);
   } catch (error) {
     console.error("Error fetching jobs:", error);

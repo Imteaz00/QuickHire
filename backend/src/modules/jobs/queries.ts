@@ -20,7 +20,7 @@ export const getAllJobs = async ({
   const whereConditions: any[] = [];
 
   if (category) {
-    whereConditions.push(arrayContains(jobs.category, [category]));
+    whereConditions.push(arrayContains(jobs.category, [category as any]));
   }
 
   if (search) {

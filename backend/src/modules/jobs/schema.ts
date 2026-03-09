@@ -1,7 +1,7 @@
 import { relations } from "drizzle-orm";
 import { pgEnum, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 import { applications } from "../applications/schema.js";
-import CATEGORY from "../../constants.js";
+import { CATEGORY } from "../../constants.js";
 
 export const categories = pgEnum("categories", [
   CATEGORY.DESIGN,
