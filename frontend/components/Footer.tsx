@@ -74,7 +74,7 @@ export default function Footer() {
               aria-label="LinkedIn"
               className="size-8 rounded-full bg-white/10 text-white text-xs flex items-center justify-center"
             >
-              <Image src="/images/Linkedin.svg" alt="LinkedIn" width={12} height={12} />
+              <Image src="/images/LinkedIn.svg" alt="LinkedIn" width={12} height={12} />
             </button>
             <button
               aria-label="Twitter"
