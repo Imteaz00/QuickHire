@@ -74,31 +74,31 @@ export default function Footer() {
               aria-label="LinkedIn"
               className="size-8 rounded-full bg-white/10 text-white text-xs flex items-center justify-center"
             >
-              <Image src="/images/linkedin.svg" alt="LinkedIn" width={12} height={12} />
+              <Image src="/images/Linkedin.svg" alt="LinkedIn" width={12} height={12} />
             </button>
             <button
               aria-label="Twitter"
               className="size-8 rounded-full bg-white/10 text-white text-xs flex items-center justify-center"
             >
-              <Image src="/images/twitter.svg" alt="Twitter" width={12} height={12} />
+              <Image src="/images/Twitter.svg" alt="Twitter" width={12} height={12} />
             </button>
             <button
               aria-label="Instagram"
               className="size-8 rounded-full bg-white/10 text-white text-xs flex items-center justify-center"
             >
-              <Image src="/images/instagram.svg" alt="Instagram" width={12} height={12} />
+              <Image src="/images/Instagram.svg" alt="Instagram" width={12} height={12} />
             </button>
             <button
               aria-label="Dribbble"
               className="size-8 rounded-full bg-white/10 text-white text-xs flex items-center justify-center"
             >
-              <Image src="/images/dribbble.svg" alt="Dribbble" width={12} height={12} />
+              <Image src="/images/Dribbble.svg" alt="Dribbble" width={12} height={12} />
             </button>
             <button
               aria-label="Facebook"
               className="size-8 rounded-full bg-white/10 text-white text-xs flex items-center justify-center"
             >
-              <Image src="/images/facebook.svg" alt="Facebook" width={8} height={8} />
+              <Image src="/images/Facebook.svg" alt="Facebook" width={8} height={8} />
             </button>
           </div>
         </div>
